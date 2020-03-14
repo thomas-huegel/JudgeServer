@@ -124,3 +124,19 @@ var PY3LangConfig = &LangConfig{
 		Env:         append(DefaultEnv, "PYTHONIOENCODING=UTF-8"),
 	},
 }
+
+var RustLangConfig = &LangConfig{
+	CompileConfig: CompileConfig{
+		SrcName:        "main.rs",
+		ExeName:        "main",
+		MaxCpuTime:     3000,
+		MaxRealTime:    5000,
+		MaxMemory:      128 * 1024 * 1024,
+		CompileCommand: "/usr/bin/rustc -O {src_path} -o {exe_path}",
+	},
+	RunConfig: RunConfig{
+		Command:     "{exe_path}",
+		SeccompRule: "general",
+		Env:         DefaultEnv,
+	},
+}
