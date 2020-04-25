@@ -109,11 +109,11 @@ rust_lang_config = {
         "max_cpu_time": 3000,
         "max_real_time": 5000,
         "max_memory": 128 * 1024 * 1024,
-        "compile_command": "/usr/bin/rustc -O {src_path} -o {exe_path}",
+        "compile_command": "/usr/local/cargo/bin/rustc -O {src_path} -o {exe_path}",
     },
     "run": {
         "command": "{exe_path}",
-        "seccomp_rule": "general",
+        "seccomp_rule": None,
         "env": default_env
     }
 }
