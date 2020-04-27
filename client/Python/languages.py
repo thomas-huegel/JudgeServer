@@ -101,19 +101,3 @@ py3_lang_config = {
         "env": ["PYTHONIOENCODING=UTF-8"] + default_env
     }
 }
-
-rust_lang_config = {
-    "compile": {
-        "src_name": "main.rs",
-        "exe_name": "main",
-        "max_cpu_time": 3000,
-        "max_real_time": 5000,
-        "max_memory": 128 * 1024 * 1024,
-        "compile_command": "/usr/local/cargo/bin/rustc -O {src_path} -o {exe_path}",
-    },
-    "run": {
-        "command": "{exe_path}",
-        "seccomp_rule": None,
-        "env": default_env
-    }
-}
