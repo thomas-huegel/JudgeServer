@@ -11,7 +11,7 @@ RUN yes | pacman -Syu; \
 
 RUN yes | pacman -Sy $RUNTIME; \
     pip3 install --no-cache-dir $PIP_PACKAGES && \
-    cd /tmp && git clone -b newnew --depth 1 https://github.com/thomas-hugel/Judger && cd Judger && \
+    cd /tmp && git clone -b newnew --depth 1 https://github.com/thomas-huegel/Judger && cd Judger && \
     mkdir build && cd build && cmake .. && make && make install && cd ../bindings/Python && python3 setup.py install && \
     mkdir -p /code && \
     useradd -u 12001 compiler && useradd -u 12002 code && useradd -u 12003 spj && usermod -a -G code spj
